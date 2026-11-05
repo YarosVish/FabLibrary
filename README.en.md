@@ -45,7 +45,7 @@ Wishlist with discounts:
 
 You need Windows 10 or 11 and about 300 MB of free space.
 
-1. Download the archive with Code → Download ZIP on the repository page and unpack it to any folder, preferably a path without spaces, for example `D:\FabLibrary`.
+1. Download `FabLibrary-v1.0.0.zip` from the [latest release](https://github.com/YarosVish/FabLibrary/releases/latest) and unpack it to any folder, preferably a path without spaces, for example `D:\FabLibrary`.
 2. Run `Запуск.bat` (it means "Start"). On the first run the script downloads portable Node.js 22 LTS (about 30 MB) from nodejs.org, checks its checksum and installs Electron (about 100 MB). Everything goes inside the app folder; your system is not changed. Later runs start right away.
 3. Click "Sign in and load my library". Sign-in windows for Fab, the Epic purchase history and quixel.com open one after another. You type your login and password yourself on the real sites.
 
