@@ -1,0 +1,13 @@
+node_modules/
+runtime/
+dist/
+seed/
+*.log
+# личные данные приложения хранятся в %APPDATA%\Fab Library и в репозиторий не попадают
+custom-filters.json
+library.json
+purchases.json
+wishlist.json
+quixel.json
+megascans-fab.json
+user.json

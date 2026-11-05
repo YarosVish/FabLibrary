@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' thumb: data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+<title>Fab Library</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <h1>Fab Library</h1>
+      <div class="tabs" id="tabs">
+        <button data-tab="lib" class="on">Библиотека <span id="nLib"></span></button>
+        <button data-tab="qx">Quixel <span id="nQx"></span></button>
+        <button data-tab="wish">Вишлист <span id="nWish"></span></button>
+      </div>
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Поиск…" autocomplete="off">
+      </div>
+      <select id="sort" aria-label="Сортировка"></select>
+      <button class="btn" id="favbtn" title="Показать только избранное">★ <span id="favn">0</span></button>
+      <button class="btn" id="view">Таблица</button>
+      <span class="status" id="status"></span>
+      <div class="menu" id="syncMenu">
+        <button class="btn on" id="syncBtn">⟳ Обновить</button>
+        <div class="drop">
+          <button data-sync="all">Всё (библиотека, покупки, вишлист, Quixel)</button>
+          <button data-sync="library">Библиотека и покупки</button>
+          <button data-sync="wish">Только вишлист и цены</button>
+          <button data-sync="quixel">Только Quixel</button>
+        </div>
+      </div>
+      <div class="menu" id="profMenu">
+        <button class="btn" id="profBtn">☰</button>
+        <div class="drop">
+          <label id="profName"></label>
+          <label class="langrow">Язык <select id="lang"></select></label>
+          <label><input type="checkbox" id="autoWish"> Обновлять цены вишлиста при запуске</label>
+          <button id="exportBtn">Экспорт текущего списка в CSV</button>
+          <button id="folderBtn">Открыть папку с данными</button>
+          <button id="logoutBtn">Выйти и сменить аккаунт</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="main">
+  <div id="welcome" class="welcome" hidden>
+    <h2>Добро пожаловать в Fab Library</h2>
+    <p>Приложение соберёт твою библиотеку Fab, покупки, вишлист и Megascans в офлайн-каталог. Данные хранятся только на этом компьютере, отдельно для каждого аккаунта.</p>
+    <p><button class="btn on big" id="loginBtn">Войти в аккаунт и загрузить библиотеку</button></p>
+    <p class="s">Откроется окно входа в Fab — войди своим аккаунтом Epic. Затем приложение по очереди попросит вход в историю покупок Epic и на quixel.com. Первая загрузка занимает 15–30 минут, следующие — пару минут. Позже обновлять можно кнопкой «⟳ Обновить» вверху.</p>
+  </div>
+  <div id="wadd" class="wadd" hidden><input id="wurl" placeholder="Вставь ссылку на пак с fab.com и нажми Enter — название, цена и превью подтянутся сами"><button class="btn" id="wbtn">Добавить</button></div>
+  <div class="wmsg" id="wmsg"></div>
+  <div class="colls" id="colls"></div>
+  <div class="cpanel" id="cpanel" hidden>
+    <div class="cphead"><input id="cq" placeholder="Поиск по подборкам"><span class="s">☆ — закрепить кнопку, × — удалить</span><button class="btn" id="cclose">Закрыть</button></div>
+    <div id="clist"></div>
+  </div>
+  <div class="filters" id="filters" style="padding-top:14px"></div>
+  <div class="summary" id="summary"></div>
+  <div class="bar"><span id="count"></span><span class="reset" id="reset" hidden>Сбросить фильтры</span></div>
+  <div id="out"></div>
+  <button class="btn morebtn" id="more" hidden>Показать ещё</button>
+  <div class="note" id="note"></div>
+</main>
+<div class="toast" id="toast" hidden></div>
+<script src="i18n.js"></script>
+<script src="classify.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
